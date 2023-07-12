@@ -23,4 +23,7 @@ urlpatterns = (
 
     # 获取主页
     url(r'(/)?$', views.index),
+
+    #测试接口
+    url(r'^^wechat(/)?$',views.mm),
 )

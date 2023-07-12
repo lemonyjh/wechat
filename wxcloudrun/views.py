@@ -89,3 +89,10 @@ def update_count(request):
     else:
         return JsonResponse({'code': -1, 'errorMsg': 'action参数错误'},
                     json_dumps_params={'ensure_ascii': False})
+
+
+def mm(request):
+    a = (request.GET.get('a'))
+    b = (request.GET.get('b'))
+    m = "第一个变量为："+a+",第二个变量为："+b
+    return m
