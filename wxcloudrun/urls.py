@@ -27,4 +27,6 @@ urlpatterns = (
 
     #测试接口
     path('wechat/',views.mm),
+
+    path('test/',views.execSimilar),
 )

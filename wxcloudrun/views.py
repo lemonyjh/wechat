@@ -92,8 +92,27 @@ def update_count(request):
                     json_dumps_params={'ensure_ascii': False})
 
 
-def mm(request, _):
+def mm(request):
     a = (request.GET.get('a'))
     b = (request.GET.get('b'))
     m = "第一个变量为："+a+",第二个变量为："+b
     return HttpResponse(m)
+
+def execSimilar(request):
+    if request.method == 'POST':
+        print(request.POST.getlist('a'))
+        dict={}
+        if request.POST:
+            a = request.POST.get('a',0);
+            b = request.POST.get('b',0);
+            if a and b :
+                res = a+b
+                dict['number'] = res
+                dict = json.dumps(dict)
+                return HttpResponse(dict)
+            else:
+                return HttpResponse('param error!')
+        else:
+            return HttpResponse('no params')
+    else:
+        return HttpResponse('method error!')
