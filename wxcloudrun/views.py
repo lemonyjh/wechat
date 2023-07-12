@@ -92,7 +92,7 @@ def update_count(request):
                     json_dumps_params={'ensure_ascii': False})
 
 
-def mm(request):
+def mm(request, _):
     a = (request.GET.get('a'))
     b = (request.GET.get('b'))
     m = "第一个变量为："+a+",第二个变量为："+b
