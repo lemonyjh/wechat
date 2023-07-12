@@ -29,4 +29,6 @@ urlpatterns = (
     path('wechat/',views.mm),
 
     path('test/',views.execSimilar),
+
+    path('testget/',views.gettest),
 )

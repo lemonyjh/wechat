@@ -98,6 +98,14 @@ def mm(request):
     m = "第一个变量为："+a+",第二个变量为："+b
     return HttpResponse(m)
 
+def gettest(request):
+    a = (request.GET.get('a'))
+    b = (request.GET.get('b'))
+    m = "第一个变量为："+a+",第二个变量为："+b
+    return JsonResponse({'code': m},
+                    json_dumps_params={'ensure_ascii': False})
+
+
 def execSimilar(request):
     if request.method == 'POST':
         print(request.POST.getlist('a'))
@@ -116,3 +124,5 @@ def execSimilar(request):
             return HttpResponse('no params')
     else:
         return HttpResponse('method error!')
+
+
