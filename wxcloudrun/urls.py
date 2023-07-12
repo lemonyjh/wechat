@@ -22,6 +22,8 @@ urlpatterns = (
     # 计数器接口
     url(r'^^api/count(/)?$', views.counter),
 
+    url(r'^^wechat(/)?$', views.mm),
+
     # 获取主页
     url(r'(/)?$', views.index),
 
